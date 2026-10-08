@@ -1,0 +1,5 @@
+{% extends 'gestion/base.html' %}{% block contenido %}
+<section class="hero"><span class="etiqueta">Mi proyecto Django ✨</span><h1>Tu platita bien organizada</h1><p>Una billetera digital de práctica y bonita.</p><a class="boton" href="{% url 'movimientos' %}">Hacer movimiento →</a></section>
+<div class="tarjetas"><article class="tarjeta"><span>Clientes</span><strong>{{ clientes }}</strong></article><article class="tarjeta"><span>Billeteras</span><strong>{{ cuentas }}</strong></article><article class="tarjeta"><span>Saldo total de prueba</span><strong>${{ saldo_total|floatformat:0 }}</strong></article></div>
+<section class="panel"><h2>Últimos movimientos</h2>{% for m in movimientos %}<div class="fila"><span>{{ m.get_tipo_display }} · {{ m.detalle }}</span><b>${{ m.monto|floatformat:0 }}</b></div>{% empty %}<p>todavía no hay movimientos.</p>{% endfor %}</section>
+{% endblock %}

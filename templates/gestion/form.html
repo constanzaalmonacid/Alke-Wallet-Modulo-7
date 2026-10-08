@@ -1,0 +1,1 @@
+{% extends 'gestion/base.html' %}{% block contenido %}<section class="panel formulario"><h1>{{ titulo }}</h1><p>Completa los datos y guarda los cambios</p><form method="post">{% csrf_token %}{{ form.as_p }}<button class="boton" type="submit">Guardar </button><a class="volver" href="javascript:history.back()">Volver</a></form></section>{% endblock %}
